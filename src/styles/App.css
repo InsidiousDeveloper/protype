@@ -1,0 +1,201 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap);
+
+:root {
+    --neumorphBg: #E5E5E5;
+    --shadow: #ffffff;
+    --opposeShadow: #00000080;
+    --spanBg: #22222270;
+    --color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    user-select: none;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-color: var(--neumorphBg);
+    transition: .3s;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.box {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 100%;
+    /* height: 120px; */
+    flex-wrap: wrap;
+    /* box-shadow: inset -5px -5px 9px var(--shadow),
+                inset 5px 5px 9px #00000080; */
+    list-style-type: none;
+    word-wrap: break-word;
+    overflow: hidden;
+    word-spacing: 10px;
+    border-radius: 10px;
+}
+.list {
+    /* height: 120px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 10px;
+    transition: .3s;
+    box-shadow: inset -3px -3px 5px var(--shadow),
+                inset 3px 3px 5px var(--opposeShadow);}
+.box span {
+    /* margin: 2px 5px; */
+    font-size: 1.8em;
+    color: var(--color);
+    padding: 5px;
+    border-radius: 6px;
+    font-family: Arial;
+    /* background: cyan; */
+}
+.test .tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 150px;
+    width: 100%;
+
+}
+.tools input {
+    width: 60%;
+    height: 50px;
+    font-size: 1.7em;
+    padding: 5px 20px;
+    border-radius: 50px;
+    background: var(--neumorphBg);
+    color: var(--color);
+    transition: .3s;
+    box-shadow: -5px -5px 7px var(--shadow),
+                5px 5px 7px var(--opposeShadow);
+}
+.tools .timer {
+    font-size: 2rem;
+    margin: 0 10px;
+    height: 50px;
+    border-radius: 10px;
+    width: 65px;
+    color: var(--color);
+    font-family: Arial, Helvetica, sans-serif;
+    animation: animate;
+    transition: .3s;
+    box-shadow: inset -3px -3px 5px var(--shadow),
+                inset 3px 3px 5px var(--opposeShadow);
+}
+input:disabled {
+    cursor: not-allowed;
+    border-radius: 5px;
+    filter: brightness(0.8);
+    box-shadow: inset -3px -3px 5px var(--opposeShadow),
+                inset 3px 3px 5px var(--shadow);
+}
+.btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1em;
+    transition: .5s;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background: var(--neumorphBg);
+    transition: .3s;
+    box-shadow: inset -3px -3px 5px var(--shadow),
+                inset 3px 3px 5px var(--opposeShadow);
+
+}
+.active  {
+    background: var(--spanBg);
+}
+.box span.correct {
+    color: green;
+}
+.box span.wrong {
+    color: red;
+}
+svg path {
+    color: var(--color);
+    transition: .3s;
+    font-size: 1em;
+}
+.btn:hover {
+    box-shadow: -5px -5px 7px var(--shadow),
+                5px 5px 7px var(--opposeShadow);
+}
+.btn-mode:hover svg.night > path {
+    color: gold;
+}
+.btn-start:hover svg > path {
+    color: blue;
+}
+.btn-mode:hover svg.day > path {
+    color: blue;
+}
+.btn-start:hover svg {
+    animation: animate .7s ease-in-out;
+}
+@keyframes animate {
+    0% {transform: rotateZ(0deg);}
+    100% {transform: rotateZ(360deg);}
+}
+.info {
+    width: 20rem;
+    padding: 10px;
+    border-radius: 9px;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 12rem;
+    box-shadow: inset -3px -3px 5px var(--shadow),
+                inset 3px 3px 5px var(--opposeShadow);
+}
+.info .data, .bar-box {
+    font-family: 'Nunito Sans';
+    font-weight: 400;
+    width: 100%;
+    text-align: left;
+    color: var(--color);
+}
+.bar-box {
+    display: flex;
+    flex-direction: column;
+}
+.bar-row {
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    border-radius: 50px;
+    box-shadow: inset -3px -3px 5px var(--shadow),
+                inset 3px 3px 5px var(--opposeShadow);
+}
+.bar-level {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 50px;
+    z-index: 2;
+    background: linear-gradient(100deg, #3449eb 0%, #00d9ff 100%);
+}
+.bar-level.shadow {
+    box-shadow: none;
+    z-index: 0;
+    filter: blur(3px);
+}
