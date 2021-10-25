@@ -43,18 +43,12 @@ export const Display = () => {
         
     }, [space])
     
-    
     return (
         <div className="list">
             {
                 
                 Top200.map((word, index) => {
-                    // console.log(arr)
-                    // if (stack == 1) {
-                    //     return <span key={index} className={`${stack}${index.toString()}`}>{Top200[arr[index]]}</span>
-                    // } else if (stack == 2) {
-                    // }
-                    return <span key={index} className={`${stack}${index.toString()}`}>{Top200[arr[index]]}</span>
+                    return <span key={index} style={{display: index > 30 && 'none'}} className={`${stack}${index.toString()}`}>{Top200[arr[index]]}</span>
                 }, [stack])
             }
         </div>

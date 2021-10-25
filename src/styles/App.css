@@ -49,15 +49,21 @@ body {
 }
 .list {
     /* height: 120px; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    width: 90%;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    justify-content: center;
     align-items: center;
     margin: auto;
     padding: 10px;
     transition: .3s;
     box-shadow: inset -3px -3px 5px var(--shadow),
-                inset 3px 3px 5px var(--opposeShadow);}
+                inset 3px 3px 5px var(--opposeShadow);
+}
+.list span {
+    text-align: center;
+}
 .box span {
     /* margin: 2px 5px; */
     font-size: 1.8em;
@@ -150,7 +156,7 @@ svg path {
     color: blue;
 }
 .btn-start:hover svg {
-    animation: animate .7s ease-in-out;
+    animation: animate .5s ease-in-out;
 }
 @keyframes animate {
     0% {transform: rotateZ(0deg);}

@@ -77,9 +77,6 @@ export const Display = () => {
     console.log('refresh')
     
 
-
-    
-
     // const draw2 = useMemo(() => {
     //     return Draw()
     // }, [toDisplay])
